@@ -39,7 +39,7 @@ local function setup_go_adapter(dap)
     local addr = string.format("%s:%s", host, port)
     local opts = {
       stdio = {nil, stdout},
-      args = {"dap", "-l", addr},
+      args = {"dap", "-l", addr, "--api-version", "2"},
       detached = true
     }
     handle, pid_or_err = vim.loop.spawn("dlv", opts, function(code)
